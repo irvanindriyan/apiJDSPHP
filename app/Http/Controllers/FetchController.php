@@ -45,7 +45,7 @@ class FetchController extends Controller
 			$products = $this->getDataAll();
 
 			return response()->json(
-	            Fungsi::resOK($data)
+	            Fungsi::resOK($products)
 	        , 200);
 		} catch (\Exception $e){
             return response()->json(

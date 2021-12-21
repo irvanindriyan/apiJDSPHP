@@ -136,7 +136,7 @@ result:
 endpoint Data Order
 ```sh
 method: GET
-url: https://apijdsnode.herokuapp.com/api/fetch/data_order
+url: https://apijdsphp.herokuapp.com/api/data_order
 header: 
 {
     Authorization: Bearer {Token}
