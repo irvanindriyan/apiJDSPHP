@@ -17,7 +17,7 @@ class FetchController extends Controller
         $this->client = new Client();
     }
 
-	public function getData()
+	public function getDataAll()
 	{
 		try {
 			$products = $this->fetchData('https://60c18de74f7e880017dbfd51.mockapi.io/api/v1/jabar-digital-services/product');
@@ -39,10 +39,25 @@ class FetchController extends Controller
         }
 	}
 
+	public function getData()
+	{
+		try {
+			$products = $this->getDataAll();
+
+			return response()->json(
+	            Fungsi::resOK($data)
+	        , 200);
+		} catch (\Exception $e){
+            return response()->json(
+	            Fungsi::resError($e->getMessage())
+	        , 500);
+        }
+	}
+
 	public function getDataOrder()
 	{
 		try {
-			$products = $this->getData();
+			$products = $this->getDataAll();
 
 			foreach ($products as $product) {
 				unset($product->id);
@@ -54,7 +69,9 @@ class FetchController extends Controller
 				return (float) str_replace(',', '', $a->price_idr) <=> (float) str_replace(',', '', $b->price_idr);
 			});
 
-	        return $products;
+	        return response()->json(
+                Fungsi::resOK($products)
+            , 200);
 	    } catch (\Exception $e){
             return response()->json(
 	            Fungsi::resError($e->getMessage())
