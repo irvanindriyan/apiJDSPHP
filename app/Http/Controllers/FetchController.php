@@ -12,6 +12,7 @@ class FetchController extends Controller
 
 	public function __construct(Request $request)
     {
+        // $this->apiKey = 'd1ded944220ca6b0c442';
         $this->apiKey = 'd1ded944220ca6b0c442';
         $this->client = new Client();
     }
