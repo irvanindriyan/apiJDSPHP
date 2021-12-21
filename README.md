@@ -38,17 +38,17 @@ method: POST
 url: https://apijdsphp.herokuapp.com/api/sign_up
 param:
 {
-    "nik": "1234567890123456",
-    "password": "123456",
-    "password_confirmation": "123456",
-    "role_id": 1
+    "nik": "{nik}",
+    "password": "{password}",
+    "password_confirmation": "{password}",
+    "role_id": {1, 2} // 1 Admin 2 User
 }
 result:
 {
     "status": 200,
     "data": {
         "message": "Register user successful",
-        "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9hcGlqZHNwaHAuaGVyb2t1YXBwLmNvbVwvYXBpXC9zaWduX3VwIiwiaWF0IjoxNjQwMDY4NTIxLCJleHAiOjE2NDAwNzIxMjEsIm5iZiI6MTY0MDA2ODUyMSwianRpIjoiYXd4MUd2bWhhN3pPQXI4dCIsInN1YiI6MSwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.8GFLL1sIkNjasNO7wGU9bGLF7KbCio3cSJsW8LsV6Qs"
+        "token": "jwt token"
     }
 }
 ```
@@ -59,15 +59,15 @@ method: POST
 url: https://apijdsphp.herokuapp.com/api/sign_in
 param:
 {
-    "nik": "1234567890123456",
-    "password": "123456",
+    "nik": "{nik}",
+    "password": "{password}",
 }
 result:
 {
     "status": 200,
     "data": {
         "message": "Login successful",
-        "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9hcGlqZHNwaHAuaGVyb2t1YXBwLmNvbVwvYXBpXC9zaWduX2luIiwiaWF0IjoxNjQwMDY4NTkxLCJleHAiOjE2NDAwNzIxOTEsIm5iZiI6MTY0MDA2ODU5MSwianRpIjoiRWx4WlF4Wm04UVNBNTVxWiIsInN1YiI6MSwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.VCs4hiNeZaXdQmycKx6OVZrW-PPR4ceGHruPbPJAWi8"
+        "token": "jwt token"
     }
 }
 ```
@@ -86,7 +86,7 @@ result:
     "data": {
         "nik": "1234567890123456",
         "role": "Admin",
-        "jwt": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9hcGlqZHNwaHAuaGVyb2t1YXBwLmNvbVwvYXBpXC91c2VyIiwiaWF0IjoxNjQwMDY4NjU1LCJleHAiOjE2NDAwNzIyNTUsIm5iZiI6MTY0MDA2ODY1NSwianRpIjoiZGZzbjhmREkwbXRlNWJwciIsInN1YiI6MSwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.MH3la1Yj0xuNpN3EIgOTZGKre1s-DLs89fEERWbesMg"
+        "jwt": "{jwt token}"
     }
 }
 ```
